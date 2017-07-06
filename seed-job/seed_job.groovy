@@ -15,11 +15,12 @@ while(next != null) {
 
 def repositoryJob(reposUrl){
     def reposApi = new URL(reposUrl)
-    def token = "154ef662cf02c153c30dfd500de51f27258eff52"
+    def token = "8bd862867fd5db89f18dafc5cd037965e49e5a67"
 
     def conn = reposApi.openConnection()
     conn.setRequestProperty("Authorization", "token ${token}")
 
+    
     def repos = new groovy.json.JsonSlurper().parseText(conn.content.text)
 
     println("reposUrl ${reposUrl}")
