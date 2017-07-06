@@ -8,7 +8,7 @@ System.getProperties().put("proxyPort", "8080"); //TODO generate from env
 
 ignoredRepos = ["toto"]
 
-next = repositoryJob("https://api.github.com/orgs/mbretaud/repos")
+next = repositoryJob("https://api.github.com/mbretaud/repos")
 while(next != null) {
     next = repositoryJob(next)
 }
