@@ -20,7 +20,7 @@ def repositoryJob(reposUrl){
     def conn = reposApi.openConnection()
     conn.setRequestProperty("Authorization", "token ${token}")
 
-//    def repos = new groovy.json.JsonSlurper().parseText(conn.content.text)
+    def repos = new groovy.json.JsonSlurper().parseText(conn.content.text)
 
     println("reposUrl ${reposUrl}")
 
