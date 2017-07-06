@@ -26,3 +26,22 @@ def repositoryJob(reposUrl){
 
     return nextPage(conn);
 }
+
+def nextPage(conn) {
+    def link = conn.getHeaderField("Link")
+    println(link)
+    def next = null
+    if(link != null) {
+        def links = link.split(",")
+        println(link)
+        links.each {
+            def pages = it.split(";")
+            println(pages[1])
+            if(pages.length >= 2 && pages[1].trim() == "rel=\"next\""){
+                next = pages[0].substring(1, pages[0].length() - 1)
+            }
+        }
+    }
+    return next;
+}
+
