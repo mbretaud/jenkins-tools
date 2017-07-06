@@ -15,7 +15,7 @@ while(next != null) {
 
 def repositoryJob(reposUrl){
     def reposApi = new URL(reposUrl)
-    def token = "8bd862867fd5db89f18dafc5cd037965e49e5a67"
+    def token = "34e023c7ee867359dab5ee078f355658cff3d274"
 
     def conn = reposApi.openConnection()
     conn.setRequestProperty("Authorization", "token ${token}")
