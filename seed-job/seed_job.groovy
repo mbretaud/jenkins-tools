@@ -3,7 +3,7 @@ import java.io.*;
 
 /* PROXY SETTINGS */
 System.getProperties().put("proxySet", "true");
-System.getProperties().put("proxyHost", "10.54.64.5"); //TODO generate from env
+System.getProperties().put("proxyHost", "*.*.*.*"); //TODO generate from env
 System.getProperties().put("proxyPort", "8080"); //TODO generate from env
 
 ignoredRepos = ["toto"]
@@ -15,7 +15,7 @@ while(next != null) {
 
 def repositoryJob(reposUrl){
     def reposApi = new URL(reposUrl)
-    def token = "34e023c7ee867359dab5ee078f355658cff3d274"
+    def token = "***********"
 
     def conn = reposApi.openConnection()
     conn.setRequestProperty("Authorization", "token ${token}")
